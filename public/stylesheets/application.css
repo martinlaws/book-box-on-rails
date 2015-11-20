@@ -1,0 +1,50 @@
+.header-logout {
+  margin-top: 1em;
+}
+
+.header-box {
+  margin-top: 1.5em;
+  padding-top: 1.5em;
+  clear: both;
+}
+
+.book-tile {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-top: 2em;
+  padding: 2px, 2px, 2px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  clear: both;
+  text-align: center;
+}
+
+/*.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}*/
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction and if we allow the items to wrap
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: flex-start;
+}
+
+.getLocation {
+  margin-left: 10px;
+}
+
+.no-border {
+  border: none;
+}
