@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  include UserActions
+
+  before_action :load_user
+
   def new
     @user = User.new
   end
@@ -8,6 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
+      redirect_to trade_wall_index_path
     else
       render :new
     end
