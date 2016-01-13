@@ -17,7 +17,7 @@
 
   <body>
     <% if current_user %>
-      <div class="row header-logout" style="float: right; margin-right: 10px;">
+      <div class="row header-logout">
         <%= link_to "Bookshelf", new_book_path, class:"button button-primary" %>
         <%= link_to "Post a new book", new_book_path, class:"button button-primary" %>
         <%= link_to "Trade Wall", trade_wall_index_path, class:"button button-primary" %>
@@ -25,15 +25,13 @@
       </div>
     <% end %>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/javascript/application.js"></script>
-
     <div class="container">
 
       <%= yield %>
 
     </div>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </body>
 
 </html>
