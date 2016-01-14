@@ -1,0 +1,18 @@
+<div class="row">
+  <h1 class="header box"> "Here's what's available near you... " </h1>
+</div>
+
+<div class="flex-container">
+
+  <% @books.each do |book| %>
+    <% if book##.available? %>
+      <div class="four columns book-title">
+
+        <h4><%= book.title %></h4>
+        <p>by: <%= book.author %></p>
+        <p><%= book.genre %></p>
+        <%= button_to "Trade", new_trade_path(book_id: book.id), remote: true, class:"button trade-button" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row">
+    <h1 class="header-box">
+      <center>Let's make a new book!</center>
+    </h1>
+  </div>
+  <%= form_for @book do |f| %>
+    <% if @book.errors.any? %>
+      <div>
+        <%= pluralize(@book.errors.count, "error") %> prevented the book from being saved:
+        <ul>
+          <% @book.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="six columns">
+        <%= f.label "Title", class: "u-fill-width" %><br>
+        <%= f.text_field :title, class: "u-fill-width" %>
+      </div>
+      <div class="six columns">
+        <%= f.label "Author", class: "u-fill-width" %><br>
+        <%= f.text_field :author, class: "u-fill-width" %>
+      </div>
+    </div>
+    <div class:"row">
+      <div class:"six-columns">
+        <%= f.label "Genre", class: "u-full-width" %><br>
+        <%= f.select :genre, ['Fiction', 'Non-Fiction', 'Children'], class:"u-full-width" %>
+        <%= f.submit "Submit" %>
+      </div>
+    </div>
+  <% end %>
+</div>
