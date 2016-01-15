@@ -1,6 +1,6 @@
 <div class="row">
   <h2 class="header-box">
-    <center style="margin-top: 0.5em;"><%= current_user.id %>'s Books:</center>
+    <center style="margin-top: 0.5em;"><%= current_user.name %>'s Books:</center>
   </h2>
 </div>
 
@@ -41,7 +41,7 @@
           <% book = Book.find(trade.book_id) %>
           <% receiving_user = User.find(trade.receiving_user) %>
           <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
-          <td><%= receiving_user.id %> <%= receiving_user.id %></td>
+          <td><%= receiving_user.name %> </td>
           <%#<td><%= receiving_user.location.address %></td>%>
           <form method="post" action="/accept_trade<%= trade.id %>">
             <td><button type="hidden" name="_method" value="put" class="no-border"><i class="material-icons md-18">thumb_up</i></button</td>
@@ -69,7 +69,7 @@
           <% book = Book.find(trade.book_id) %>
           <% posting_user = User.find(trade.posting_user) %>
           <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
-          <td><%= posting_user.id %> <%= posting_user.id %></td>
+          <td><%= posting_user.name %> </td>
           <%#<td><%= posting_user.location.address %></td>%>
       </tr>
     <% end %>
