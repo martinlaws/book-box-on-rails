@@ -20,6 +20,11 @@ class TradesController < ApplicationController
     Trade.find(params[:trade]).destroy
   end
 
+  def accept_trade
+    render nothing: true
+    Trade.find(params[:trade]).status = "completed"
+  end
+
   private
   
   def trade_params

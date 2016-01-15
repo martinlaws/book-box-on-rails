@@ -43,12 +43,16 @@
           <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
           <td><%= receiving_user.name %> </td>
           <%#<td><%= receiving_user.location.address %></td>%>
-          <form method="post" action="/accept_trade<%= trade.id %>">
-            <td><button type="hidden" name="_method" value="put" class="no-border"><i class="material-icons md-18">thumb_up</i></button</td>
-          </form>
+          <td>
+          <%= button_to accept_trade_trades_path(trade: trade), remote: true, class: :accept_trade do %>
+            <i class="material-icons md-18">thumb_up</i>
+          <% end %>
+          </td>
+          <td>
           <%= button_to decline_trade_trades_path(trade: trade), remote: true, class: :decline_trade do %>
             <i class="material-icons md-18">thumb_down</i>
           <% end %>
+          </td>
       </tr>
     <% end %>
     </tbody>
