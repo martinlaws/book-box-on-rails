@@ -11,7 +11,11 @@
         <h4><%= book.title %></h4>
         <p>by: <%= book.author %></p>
         <p><%= book.genre %></p>
-        <%= button_to "Trade", trades_path(book_id: book.id), remote: true, class:"button trade-button" %>
+        <% if book.trades.exists? && book.trades.last.status == "pending" %>
+          <div> Pending trade ... </div>
+        <% else %>
+          <%= button_to "Trade", trades_path(book_id: book.id), remote: true, class:"button trade-button" %>
+        <% end %>
       </div>
     <% end %>
   <% end %>
