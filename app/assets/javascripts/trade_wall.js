@@ -1,4 +1,3 @@
-
 var loaded = function() {
   $('.trade-button').click(function() {
     var $this = $(this);

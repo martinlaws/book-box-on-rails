@@ -15,6 +15,11 @@ class TradesController < ApplicationController
 
   end
 
+  def decline_trade
+    render nothing: true
+    Trade.find(params[:trade]).destroy
+  end
+
   private
   
   def trade_params

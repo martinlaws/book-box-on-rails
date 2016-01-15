@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :trade_wall, only: :index
   resources :bookshelf, only: :index
-  resource :trades
+  resource :trades do
+    post :decline_trade, on: :collection
+  end
 
   get "/logout", to: "sessions#destroy"
 
