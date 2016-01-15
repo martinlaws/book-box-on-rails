@@ -12,14 +12,12 @@
           <h4><a href="/book/<%= book.title %>"><%= book.title %></a></h4>
           <p>by: <%= book.author %></p>
           <p><%= book.genre %></p>
-          <%if book.available? %>
+          <% if book.availability %>
             <%= button_to "Make Unavailable", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
-            <% if book.availability %>
-              <%= button_to "Available", toggle_availability_books_path(book: book.id), remote: true %>
-            <% else %>
-              <%= button_to "Repost", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
-            <% end %>
+          <% else %>
+            <%= button_to "Repost", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
           <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
