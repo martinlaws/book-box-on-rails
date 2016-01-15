@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
     Trade.where(posting_user: id)
   end
 
+  def logout
+    session.clear
+    redirect_to :back
+  end
+
 end
