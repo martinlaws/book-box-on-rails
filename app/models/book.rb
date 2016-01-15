@@ -12,12 +12,4 @@ class Book < ActiveRecord::Base
     self.availability == true
   end
 
-  def make_available
-    self.availability = true
-  end
-
-  def make_unavailable
-    self.availability = false
-  end
-
 end
