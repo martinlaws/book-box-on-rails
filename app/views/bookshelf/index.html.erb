@@ -65,7 +65,7 @@
     </thead>
     <tbody>
       <tr>
-        <% current_user.receiving_trades.where(:status => "pending").each do |trade| %>
+        <% current_user.receiving_trades.where(status: :pending).each do |trade| %>
           <% book = Book.find(trade.book_id) %>
           <% posting_user = User.find(trade.posting_user) %>
           <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>

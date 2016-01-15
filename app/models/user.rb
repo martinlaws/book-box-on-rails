@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def receiving_trades
-    Trade.where(posting_user: id)
+    Trade.where(receiving_user: id)
   end
 
 end
