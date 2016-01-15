@@ -44,7 +44,7 @@
           <td><%= receiving_user.name %> </td>
           <%#<td><%= receiving_user.location.address %></td>%>
           <td>
-          <%= button_to accept_trade_trades_path(trade: trade), remote: true, class: :accept_trade do %>
+          <%= button_to accept_trade_trades_path(trade: trade, book: book), remote: true, class: :accept_trade do %>
             <i class="material-icons md-18">thumb_up</i>
           <% end %>
           </td>

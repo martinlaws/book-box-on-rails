@@ -20,9 +20,14 @@ class BooksController < ApplicationController
   end
 
   def toggle_availability
-    render nothing: true
     book = Book.find(params[:book])
     book.update(availability: !book.availability)
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
+
   end
 
   private

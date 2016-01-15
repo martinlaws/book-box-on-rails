@@ -22,7 +22,12 @@ class TradesController < ApplicationController
 
   def accept_trade
     render nothing: true
-    Trade.find(params[:trade]).status = "completed"
+
+    trade = Trade.find(params[:trade])
+    book = Book.find(params[:book])
+
+    trade.update(status: :completed)
+    book.update(user_id: trade.receiving_user)
   end
 
   private
