@@ -14,10 +14,12 @@
           <p><%= book.genre %></p>
           <%if book.available? %>
             <%= button_to "Make Unavailable", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
-          <% else %>
-            <%= button_to "Repost", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
+            <% if book.availability %>
+              <%= button_to "Available", toggle_availability_books_path(book: book.id), remote: true %>
+            <% else %>
+              <%= button_to "Repost", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
+            <% end %>
           <% end %>
-        <% end %>
       </div>
     <% end %>
   </div>
