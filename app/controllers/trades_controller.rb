@@ -1,4 +1,4 @@
-class TradeController < ApplicationController
+class TradesController < ApplicationController
 
   def new
     @trade = Trade.new
@@ -8,17 +8,17 @@ class TradeController < ApplicationController
     @trade = Trade.new(trade_params)
 
     if @trade.save
-      redirect_to trade_wall_index_path
+      render nothing: true
     else
-      render :new
+      render nothing: true
     end
 
   end
 
   private
-
+  
   def trade_params
-    require(:trade).permit(:posting_user, :receiving_user, :book_id, :status)
+    params.permit(:status, :book_id).merge(posting_user: Book.find(params[:book_id]).user_id, receiving_user: current_user.id)
   end
 
 end

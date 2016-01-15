@@ -2,11 +2,13 @@ Rails.application.routes.draw do
 
   root "splash#index"
 
-  resource :session, only: [:new, :create, :destroy]
+  resources :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :update, :destroy]
-  resources :books
-  resources :trades
-  resources :bookshelf, only: :index
+  resources :books do
+    post :toggle_availability, on: :collection
+  end
   resources :trade_wall, only: :index
+  resources :bookshelf, only: :index
+  resource :trades
 
 end
