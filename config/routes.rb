@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :bookshelf, only: :index
   resource :trades
 
-  get "/logout", to: "user#logout"
+  get "/logout", to: "users#logout"
 
 end

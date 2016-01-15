@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    session.clear
+    redirect_to :back
+  end
+  
   protected
 
   def user_params
