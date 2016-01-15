@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "splash#index"
 
-  resources :session, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :update, :destroy]
 
   resources :books do
@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :bookshelf, only: :index
   resource :trades
 
-  get "/logout", to: "users#logout"
+  get "/logout", to: "sessions#destroy"
 
 end
