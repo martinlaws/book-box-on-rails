@@ -1,28 +1,26 @@
-== README
+== BookBox
+BookBox is now live at http://book-box-app.herokuapp.com - sign up and swap away!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== What is this?
 
-Things you may want to cover:
+BookBox is the digital incarnation of the classic hostel/café/street corner Book Swap.
 
-* Ruby version
+Do you have books lying around that you'll never touch again? Of course you do.
 
-* System dependencies
+Don't you hate how the library only gives you a week or two to get through a whole book? HOW FAST DO YOU THINK I READ, LIBRARIANS?
 
-* Configuration
+When you swap on BookBox, the new book is yours. Forever. Or until you swap it all over again.
 
-* Database creation
+== How does it work?
 
-* Database initialization
+Simple. 1. Make an account. 2. Pick a book you'd like to swap (the available books are automatically sorted by proximity to you!) 3. Give back to the community, you selfish muppet! Post some of your old books for swapping!
 
-* How to run the test suite
+== Have questions?
 
-* Services (job queues, cache servers, search engines, etc.)
+No you don't! It's too damn simple!
 
-* Deployment instructions
+== TODO
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* implement location
+* Google Maps API for current location of book and book trade history
+* query Goodreads for book information
