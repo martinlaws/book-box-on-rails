@@ -14,7 +14,7 @@
         <% if book.trades.exists? && book.trades.last.status == "pending" %>
           <div> Pending trade ... </div>
         <% else %>
-          <%= button_to "Trade", trades_path(book_id: book.id), remote: true, class:"button trade-button" %>
+          <%= button_to "Trade", trades_path(trade: {book_id: book.id}), remote: true, class:"button trade-button" %>
         <% end %>
       </div>
     <% end %>

@@ -17,6 +17,7 @@ class TradesController < ApplicationController
 
   def decline_trade
     render nothing: true
+
     Trade.find(params[:trade]).destroy
   end
 
@@ -33,7 +34,7 @@ class TradesController < ApplicationController
   private
   
   def trade_params
-    params.permit(:status, :book_id).merge(posting_user: Book.find(params[:book_id]).user_id, receiving_user: current_user.id)
+    params.require(:trade).permit(:book_id, :posting_user, :receiving_user).merge(posting_user: Book.find(params[:trade][:book_id]).user_id, receiving_user: current_user.id)
   end
 
 end

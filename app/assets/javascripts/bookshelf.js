@@ -9,6 +9,15 @@ var loaded = function() {
     };
   });
 
+  //accept trade
+  $('.accept_trade').click(function() {
+    var $this = $(this);
+
+    setTimeout(function() {
+      $this.closest('tr').remove();
+    }, 100);
+  });
+
   //decline trade
   $('.decline_trade').click(function() {
     var $this = $(this);

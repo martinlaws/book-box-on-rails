@@ -4,7 +4,7 @@ var loaded = function() {
 
     setTimeout(function() {
       $this.replaceWith("<div>Pending trade ...</div>")
-    }, 100);
+    }, 200);
   });
 };
 
