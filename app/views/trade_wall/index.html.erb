@@ -4,7 +4,7 @@
 
 <div class="flex-container">
 
-  <% @books.each do |book| %>
+  <% @books.sort_by {|book| current_user.location.distance_to(book.user.location)}.each do |book| %>
     <% if book.availability && book.user_id != current_user.id %>
       <div class="four columns book-title">
 

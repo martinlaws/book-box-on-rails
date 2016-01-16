@@ -42,7 +42,7 @@
           <% receiving_user = User.find(trade.receiving_user) %>
           <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
           <td><%= receiving_user.name %> </td>
-          <%#<td><%= receiving_user.location.address %></td>%>
+          <td><%= receiving_user.location.address %></td>
           <td>
           <%= button_to accept_trade_trades_path(trade: trade, book: book), remote: true, class: :accept_trade do %>
             <i class="material-icons md-18">thumb_up</i>
@@ -74,7 +74,7 @@
           <% posting_user = User.find(trade.posting_user) %>
           <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
           <td><%= posting_user.name %> </td>
-          <%#<td><%= posting_user.location.address %></td>%>
+          <td><%= posting_user.location.address %></td>
       </tr>
     <% end %>
     </tbody>
