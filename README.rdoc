@@ -1,5 +1,4 @@
 == BookBox
-BookBox is now live at http://book-box-app.herokuapp.com - sign up and swap away!
 
 == What is this?
 
