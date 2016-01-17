@@ -7,12 +7,11 @@
   <% @books.sort_by {|book| current_user.location.distance_to(book.user.location)}.each do |book| %>
     <% if book.availability && book.user_id != current_user.id %>
       <div class="four columns book-title">
-
         <h4><%= book.title %></h4>
         <p>by: <%= book.author %></p>
         <p><%= book.genre %></p>
         <% if book.trades.exists? && book.trades.last.status == "pending" %>
-          <div> Pending trade ... </div>
+          <div> pending trade ... </div>
         <% else %>
           <%= button_to "Trade", trades_path(trade: {book_id: book.id}), remote: true, class:"button trade-button" %>
         <% end %>
