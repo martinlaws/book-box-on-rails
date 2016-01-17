@@ -8,8 +8,7 @@
   <div class="flex-container">
     <% current_user.books.each do |book| %>
       <div class="four columns book-tile">
-        <% if book %>
-          <h4><a href="/book/<%= book.title %>"><%= book.title %></a></h4>
+          <h4><%= link_to book.title, book_path(book.id) %></h4>
           <p>by: <%= book.author %></p>
           <p><%= book.genre %></p>
           <% if book.availability %>
@@ -17,7 +16,6 @@
           <% else %>
             <%= button_to "Repost", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
           <% end %>
-        <% end %>
       </div>
     <% end %>
   </div>
