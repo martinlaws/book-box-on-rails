@@ -32,7 +32,3 @@ var loaded = function() {
 //Reg syntax for page reload, turbolinks syntax for routes
 $(document).ready(loaded);
 $(document).on('page:load', loaded);
-
-//Reg syntax for page reload, turbolinks syntax for routes
-$(document).ready(loaded);
-$(document).on('page:load', loaded);
