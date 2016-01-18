@@ -33,6 +33,8 @@ gem 'byebug', '~> 8.2', '>= 8.2.1'
 
 gem 'geocoder'
 
+gem 'goodreads'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

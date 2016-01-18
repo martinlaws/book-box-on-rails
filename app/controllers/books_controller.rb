@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :load_goodreads
 
   def index
     @books = Book.all
@@ -26,6 +27,10 @@ class BooksController < ApplicationController
   def toggle_availability
     book = Book.find(params[:book])
     book.update(availability: !book.availability)
+  end
+
+  def load_goodreads
+    @goodreads ||= Goodreads.new(:api_key => 'uyVJPIws26NHClSoVm9Vw')
   end
 
   private

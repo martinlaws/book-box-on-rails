@@ -25,6 +25,7 @@
         </tr>
       </thead>
       <tbody>
+        <%= image_tag(@goodreads.book_by_title(@book.title).image_url) %>
         <% @book.trades.each do |trade| %>
           <% posting_user = User.find(trade.posting_user) %>
           <% receiving_user = User.find(trade.receiving_user) %>
