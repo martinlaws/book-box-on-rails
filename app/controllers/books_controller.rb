@@ -33,6 +33,9 @@ class BooksController < ApplicationController
     @goodreads ||= Goodreads.new(:api_key => 'uyVJPIws26NHClSoVm9Vw')
   end
 
+  def get_reviews
+  end
+
   private
 
   def book_params
