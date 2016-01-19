@@ -20,7 +20,7 @@ No you don't! It's too damn simple!
 
 == TODO
 
-~~implement location~~
+<del>implement location</del>
 * email notifications for incoming and accepted trades
 * 'time-picker' for posting and receiving user to set a time to meet-up for book hand-off
 * option to offer a currently-owned book on trade
