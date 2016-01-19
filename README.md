@@ -1,6 +1,6 @@
-== BookBox
+# BookBox
 
-== What is this?
+## What is this?
 
 BookBox is the digital incarnation of the classic hostel/café/street corner Book Swap.
 
@@ -10,17 +10,17 @@ Don't you hate how the library only gives you a week or two to get through a who
 
 When you swap on BookBox, the new book is yours. Forever. Or until you swap it all over again.
 
-== How does it work?
+## How does it work?
 
 Simple. 1. Make an account. 2. Pick a book you'd like to swap (the available books are automatically sorted by proximity to you!) 3. Give back to the community, you selfish muppet! Post some of your old books for swapping!
 
-== Have questions?
+## Have questions?
 
 No you don't! It's too damn simple!
 
-== TODO
+## TODO
 
-<no>implement location</no>
+~~implement location~~
 * email notifications for incoming and accepted trades
 * 'time-picker' for posting and receiving user to set a time to meet-up for book hand-off
 * option to offer a currently-owned book on trade
