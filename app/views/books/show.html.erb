@@ -1,3 +1,4 @@
+<% book_information = @goodreads.book_by_title(@book.title) %>
 <div class="container" style="clear: both;">
   <div class="six columns book-tile">
     <h4><%= @book.title %></h4>
@@ -10,6 +11,13 @@
 </div>
 
 <div class="container">
+  <div class="book-information">
+    <%= image_tag(book_information.image_url) %>
+    <p> <%= book_information.description %> </p>
+    <p> Average rating: <%= book_information.average_rating %> </p>
+    <p> Number of pages: <%= book_information.num_pages %> </p>
+    <p> Goodreads: <%= book_information.url %> </p>
+  </div>
   </br>
   <div class="row">
     <h5 class="docs-header">
@@ -25,7 +33,6 @@
         </tr>
       </thead>
       <tbody>
-        <%= image_tag(@goodreads.book_by_title(@book.title).image_url) %>
         <% @book.trades.each do |trade| %>
           <% posting_user = User.find(trade.posting_user) %>
           <% receiving_user = User.find(trade.receiving_user) %>
