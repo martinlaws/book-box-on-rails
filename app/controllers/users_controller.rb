@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :load_user
 
   def new
-    @user = User.new
+    @user = User.new.include(:books).include(:trades)
   end
 
   def create

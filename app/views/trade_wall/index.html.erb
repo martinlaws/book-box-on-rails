@@ -8,7 +8,6 @@
     <% if book.availability && book.user_id != current_user.id %>
       <div class="four columns book-title">
         <h4><%= link_to book.title, book_path(book.id) %></h4>
-        <h4><%= book.title %></h4>
         <p>by: <%= book.author %></p>
         <p><%= book.genre %></p>
         <% if book.trades.exists? && book.trades.last.status == "pending" %>

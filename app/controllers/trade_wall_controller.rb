@@ -1,7 +1,7 @@
 class TradeWallController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.includes(user: :location).includes(:trades)
   end
 
 end
