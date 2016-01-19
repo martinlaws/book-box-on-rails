@@ -20,9 +20,9 @@ No you don't! It's too damn simple!
 
 ## TODO
 
-~~implement location~~
+* ~~implement location~~
 * email notifications for incoming and accepted trades
 * 'time-picker' for posting and receiving user to set a time to meet-up for book hand-off
 * option to offer a currently-owned book on trade
 * Google Maps API for current location of book and book trade history
-* query Goodreads for book information
+* ~~query Goodreads for book information~~
