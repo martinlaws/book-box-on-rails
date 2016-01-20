@@ -15,20 +15,20 @@ class TradesController < ApplicationController
 
   end
 
-  def decline_trade
-    render nothing: true
-
-    Trade.find(params[:trade]).destroy
-  end
-
   def accept_trade
     render nothing: true
 
-    trade = Trade.find(params[:trade])
+    trade = Trade.find(params[:id])
     book = Book.find(params[:book])
 
     trade.update(status: :completed)
     book.update(user_id: trade.receiving_user)
+  end
+
+  def decline_trade
+    render nothing: true
+
+    Trade.find(params[:id]).destroy
   end
 
   private

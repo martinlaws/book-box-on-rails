@@ -6,17 +6,19 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :users, only: [:new, :create, :update, :destroy]
-
-  resources :books do
-    post :toggle_availability, on: :collection
-  end
-
+  resources :users
   resources :trade_wall, only: :index
   resources :bookshelf, only: :index
-  resource :trades do
-    post :decline_trade, on: :collection
-    post :accept_trade, on: :collection
+  resources :books do
+    member do
+    post :toggle_availability
+    end
+  end
+  resources :trades, only: [:create, :destroy] do
+    member do
+      post :decline_trade
+      post :accept_trade
+    end
   end
 
 end
