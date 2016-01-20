@@ -38,7 +38,7 @@
         <% current_user.posting_trades.where(:status => "pending").each do |trade| %>
           <% book = Book.find(trade.book_id) %>
           <% receiving_user = User.find(trade.receiving_user) %>
-          <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
+          <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= receiving_user.name %> </td>
           <td><%= receiving_user.location.address %></td>
           <td>
@@ -70,7 +70,7 @@
         <% current_user.receiving_trades.where(status: :pending).each do |trade| %>
           <% book = Book.find(trade.book_id) %>
           <% posting_user = User.find(trade.posting_user) %>
-          <td><a href="/book/<%= book.title %>"><%= book.title %></a></td>
+          <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= posting_user.name %> </td>
           <td><%= posting_user.location.address %></td>
       </tr>
