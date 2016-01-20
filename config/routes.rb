@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root "splash#index"
 
-  resources :sessions, only: [:new, :create, :destroy]
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
   resources :users, only: [:new, :create, :update, :destroy]
 
   resources :books do
@@ -15,7 +18,5 @@ Rails.application.routes.draw do
     post :decline_trade, on: :collection
     post :accept_trade, on: :collection
   end
-
-  get "/logout", to: "sessions#destroy"
 
 end
