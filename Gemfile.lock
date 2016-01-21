@@ -145,7 +145,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
   byebug (~> 8.2, >= 8.2.1)
   geocoder
   goodreads
