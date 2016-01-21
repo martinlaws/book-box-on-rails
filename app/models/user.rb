@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  authenticates_with_sorcery!
+
   has_many :books
   has_many :trades
   has_one :location
