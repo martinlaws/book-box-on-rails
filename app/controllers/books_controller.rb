@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   end
 
   def toggle_availability
-    book = Book.find(params[:book])
+    book = Book.find(params[:id])
     book.update(availability: !book.availability)
   end
 

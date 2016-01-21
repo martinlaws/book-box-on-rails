@@ -12,9 +12,9 @@
           <p>by: <%= book.author %></p>
           <p><%= book.genre %></p>
           <% if book.availability %>
-            <%= button_to "Make Unavailable", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
+            <%= button_to "Make Unavailable", toggle_availability_book_path(book.id), remote: true, class: :availability %>
           <% else %>
-            <%= button_to "Repost", toggle_availability_books_path(book: book.id), remote: true, class: :availability %>
+            <%= button_to "Repost", toggle_availability_book_path(book.id), remote: true, class: :availability %>
           <% end %>
       </div>
     <% end %>
@@ -42,12 +42,12 @@
           <td><%= receiving_user.name %> </td>
           <td><%= receiving_user.location.address %></td>
           <td>
-          <%= button_to accept_trade_trades_path(trade: trade, book: book), remote: true, class: :accept_trade do %>
+          <%= button_to accept_trade_trade_path(trade.id, book: book.id), remote: true, class: :accept_trade do %>
             <i class="material-icons md-18">thumb_up</i>
           <% end %>
           </td>
           <td>
-          <%= button_to decline_trade_trades_path(trade: trade), remote: true, class: :decline_trade do %>
+          <%= button_to decline_trade_trade_path(trade.id), remote: true, class: :decline_trade do %>
             <i class="material-icons md-18">thumb_down</i>
           <% end %>
           </td>
