@@ -30,3 +30,7 @@ No you don't! It's too damn simple!
 * option to offer a currently-owned book on trade
 * Google Maps API for current location of book and book trade history
 * ~~query Goodreads for book information~~
+
+## Test the app
+
+http://book-box1.herokuapp.com/
