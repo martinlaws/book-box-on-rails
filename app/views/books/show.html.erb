@@ -1,7 +1,7 @@
 <% book_information = @goodreads.book_by_title(@book.title) %>
 <div class="container">
   <div class="book-information">
-    <h1><%= @book.title %></h1>
+    <h1 class="header-box"><%= @book.title %></h1>
     <p><a href=<%= book_information.url %>> Find on  Goodreads </a></p>
     <p>Author: <%= @book.author %></p>
     <p>Genre: <%= @book.genre %></p>
