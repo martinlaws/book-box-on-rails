@@ -21,6 +21,7 @@ class BooksController < ApplicationController
   end
   
   def show
+    byebug
     @book = Book.find(params[:id])
   end
 

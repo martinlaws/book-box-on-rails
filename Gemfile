@@ -35,6 +35,8 @@ gem 'geocoder'
 
 gem 'goodreads'
 
+gem 'sorcery'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
