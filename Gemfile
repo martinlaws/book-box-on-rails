@@ -12,6 +12,7 @@ gem 'spring',        group: :development
 gem 'geocoder'
 gem 'goodreads'
 gem 'sorcery'
+gem 'puma'
 
 group :development do
   gem 'byebug', '~> 8.2', '>= 8.2.1'
@@ -20,11 +21,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
-
 end
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
