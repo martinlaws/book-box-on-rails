@@ -1,0 +1,7 @@
+<h1><%= current_user.name %></h1>
+<h3>Change 
+<% if current_user.id == params[:id].to_i %>
+  <p>Update name: <input></p>
+  <p>Update location: <input></p>
+  <p>Update email: <input></p>
+<% end %>
