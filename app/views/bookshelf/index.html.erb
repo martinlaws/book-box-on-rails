@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="flex-container">
-    <% current_user.books.each do |book| %>
+    <% @books.each do |book| %>
       <div class="four columns book-tile">
           <h4><%= link_to book.title, book_path(book.id) %></h4>
           <p>by: <%= book.author %></p>
