@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="flex-container">
-    <% current_user.books.each do |book| %>
+    <% @user_books.each do |book| %>
       <div class="four columns book-tile">
           <h4><%= link_to book.title, book_path(book.id) %></h4>
           <p>by: <%= book.author %></p>
@@ -35,9 +35,9 @@
     </thead>
     <tbody>
       <tr>
-        <% current_user.posting_trades.where(:status => "pending").each do |trade| %>
-          <% book = Book.find(trade.book_id) %>
+        <% @posting_trades.each do |trade| %>
           <% receiving_user = User.find(trade.receiving_user) %>
+          <% book = trade.book %>
           <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= receiving_user.name %> </td>
           <td><%= receiving_user.location.address %></td>
@@ -67,9 +67,9 @@
     </thead>
     <tbody>
       <tr>
-        <% current_user.receiving_trades.where(status: :pending).each do |trade| %>
-          <% book = Book.find(trade.book_id) %>
+        <% @receiving_trades.each do |trade| %>
           <% posting_user = User.find(trade.posting_user) %>
+          <% book = trade.book %>
           <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= posting_user.name %> </td>
           <td><%= posting_user.location.address %></td>

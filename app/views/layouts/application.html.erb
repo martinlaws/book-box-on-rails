@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>BookBoxRails</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -16,30 +17,10 @@
   </head>
 
   <body>
-    <div id="header">
-      <% if current_user %>
-        <div class="row header-logout">
-          <% unless params[:controller] == "bookshelf" %>
-            <%= link_to "Bookshelf", bookshelf_index_path, class:"button button-primary" %>
-          <% end %>
-          <% unless params[:controller] == "books" %>
-            <%= link_to "Post a new book", new_book_path, class:"button button-primary" %>
-          <% end %>
-          <% unless params[:controller] == "trade_wall" %>
-            <%= link_to "Trade Wall", trade_wall_index_path, class:"button button-primary" %>
-          <% end %>
-          <%= link_to "Settings", user_path(current_user.id), class:"button button-primary" %>
-          <%= link_to "Log Out", logout_path, method: :delete, class:"button button-primary" %>
-        </div>
-      <% end %>
-    </div>
-
+    <%= render "layouts/header" %>
     <div class="container">
-
       <%= yield %>
-
     </div>
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </body>
 
